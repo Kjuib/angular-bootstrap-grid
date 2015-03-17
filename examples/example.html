@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Bootstrap Grid Example</title>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <style>
+
+        body {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .name {
+            height: 100px;
+            background-color: blue;
+        }
+
+        .age {
+            height: 100px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body ng-app="mainApp">
+<div ng-controller="mainCtrl" class="container-fluid">
+    <div angular-bootstrap-grid list="users" size="6">
+        <div class="name">{{$item.name}} {{$index}}</div>
+        <div class="age">{{$item.age}}</div>
+    </div>
+</div>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../src/angular-bootstrap-grid.js"></script>
+
+<script>
+    var mainApp = angular.module('mainApp', ['angularBootstrapGrid']);
+    mainApp.controller('mainCtrl', function ($scope) {
+        $scope.users = [
+            {name: 'Sue', age: 30},
+            {name: 'Bob', age: 40},
+            {name: 'Tim', age: 21},
+            {name: 'Tom', age: 19},
+            {name: 'Jim', age: 54},
+            {name: 'Jen', age: 72},
+            {name: 'Meg', age: 33},
+            {name: 'Amy', age: 44},
+            {name: 'Jon', age: 28},
+            {name: 'Pam', age: 28},
+            {name: 'Sam', age: 27},
+            {name: 'Lee', age: 21},
+            {name: 'Ric', age: 31}
+        ];
+    });
+</script>
+</body>
+</html>
